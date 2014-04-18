@@ -34,6 +34,8 @@
  * Definitions
  ******************************************************************************/
 
+#define Config				0x40
+#define Status				0x41
 #define Delta_Y				0x42
 #define Delta_X				0x43
 #define SQual				0x44
@@ -58,6 +60,21 @@ ADNS2620::ADNS2620(uint8_t sclkPin, uint8_t sdioPin) : OptiMouse::OptiMouse(sclk
 /******************************************************************************
  * User API
  ******************************************************************************/
+
+signed char ADNS2620::config(void)
+{
+	return (signed char) readRegister(Config);
+}
+
+void ADNS2620::writeConfig(signed char c)
+{
+	writeRegister(Config, c);
+}
+
+signed char ADNS2620::status(void)
+{
+	return (signed char) readRegister(Status);
+}
 
 signed char ADNS2620::dx(void)
 {
@@ -102,6 +119,16 @@ signed char ADNS2620::shDown(void)
 signed char ADNS2620::framePer(void)
 {
 	return (signed char) readRegister(FramePeriod);
+}
+
+void ADNS2620::startPixRead(void)
+{
+	writeRegister(PixData, 0);
+}
+
+signed char ADNS2620::pixRead(void)
+{
+	return (signed char) readRegister(PixData);
 }
 
 // Private Methods /////////////////////////////////////////////////////////////

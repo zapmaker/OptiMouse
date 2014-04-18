@@ -32,7 +32,10 @@ class ADNS2620 : public OptiMouse
 {
   private:
   public:
-	ADNS2620(uint8_t, uint8_t);
+  	ADNS2620(uint8_t, uint8_t);
+	signed char config(void);
+	void writeConfig(signed char c);
+	signed char status(void);
 	signed char dx(void);
 	signed char dy(void);
 	signed char squal(void);
@@ -42,6 +45,9 @@ class ADNS2620 : public OptiMouse
 	signed char shUp(void);
 	signed char shDown(void);
 	signed char framePer(void);
+	void startPixRead(void);
+	signed char pixRead(void);
+
 	
 };
 
