@@ -1,0 +1,25 @@
+#######################################
+# Syntax Coloring Map For Ultrasound
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PAN3101	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+updateStatus	KEYWORD2
+dx	KEYWORD2
+dy	KEYWORD2
+motion	KEYWORD2
+dxOverflow	KEYWORD2
+dyOverflow	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
